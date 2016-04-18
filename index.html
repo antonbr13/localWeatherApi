@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="weatherApp">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <title></title>
+      <link rel="stylesheet" href="styles.css" media="screen" title="no title" charset="utf-8">
+   </head>
+   <body ng-controller="weatherCtrl as weather">
+
+<div id="container">
+<br><br>
+   <div class="location">
+      <p><h3>Your Location:</h3> {{weather.geoLocation.city}}, {{weather.geoLocation.regionName}}</p>
+   </div>
+
+   <br><br>
+
+   <div class="stats">
+      <h3>Current Conditions:</h3>
+
+
+
+         <div class="temp row">
+            <strong>Temperature:</strong>
+            <br>{{weather.statsF.main.temp}} F <br>
+            {{weather.statsC.main.temp}} C
+         </div>
+
+         <br><br>
+
+         <div class="wind row">
+            <strong>Wind:</strong> <br>{{weather.statsF.wind.speed}} MPH <br>
+            {{weather.statsC.wind.speed}} Km/H
+            <br>
+            {{weather.statsC.wind.deg}}&deg;
+         </div>
+
+         <br><br>
+
+         <div class="cloud row">
+            <strong>Cloud Index:</strong> <br>{{weather.statsF.clouds.all}}% Cloud Coverage <br>
+
+         </div>
+
+
+
+   </div>
+
+
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+<script src="app.js" charset="utf-8"></script>
+<script src="controller.js" charset="utf-8"></script>
+<script src="service.js" charset="utf-8"></script>
+   </body>
+</html>
